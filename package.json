@@ -1,0 +1,27 @@
+{
+  "name": "awsome-books",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx hint . && npx eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aimemalaika/awsome-books.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aimemalaika/awsome-books/issues"
+  },
+  "homepage": "https://github.com/aimemalaika/awsome-books#readme",
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.25.4",
+    "hint": "^6.1.9"
+  }
+}
