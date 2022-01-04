@@ -52,7 +52,7 @@ input {
   height: 30px;
   margin: 20px 0;
   width: 100%;
-  padding:0 10px;
+  padding: 0 10px;
   border: 3px solid black;
   color: black;
   outline: none;
@@ -66,5 +66,19 @@ input::placeholder {
 button {
   width: 10%;
   height: 30px;
-  box-shadow: 4px 4px 0px 0px black;
+  box-shadow: 4px 4px 0 0 black;
+}
+
+.alert {
+  padding: 20px;
+  color: white;
+  width: 100%;
+}
+
+.danger {
+  background-color: #f44336;
+}
+
+.success {
+  background-color: #1b8003;
 }
