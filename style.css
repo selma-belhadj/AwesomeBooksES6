@@ -1,20 +1,70 @@
 ul {
   list-style-type: none;
   padding: 0;
+  border: 2px solid black;
+  width: 80%;
+  margin: auto;
+}
+
+h1 {
+  width: 80%;
+  margin: 30px auto;
+  text-align: center;
+}
+
+h2 {
+  width: 80%;
+  margin: 5px auto;
+  text-align: center;
+}
+
+li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 8px;
+}
+
+li:nth-child(odd) {
+  background-color: #eae8e8;
+}
+
+li p {
+  margin: 0;
+}
+
+.separator {
+  width: 30%;
+  margin: 20px auto;
+  height: 5px;
+  background-color: black;
 }
 
 form {
   display: flex;
   flex-direction: column;
+  width: 40%;
+  margin: auto;
+  align-items: flex-end;
 }
 
 input {
   height: 30px;
   margin: 20px 0;
-  width: 30%;
+  width: 100%;
+  padding:0 10px;
+  border: 3px solid black;
+  color: black;
+  outline: none;
+  font-size: 14px;
+}
+
+input::placeholder {
+  color: black;
 }
 
 button {
   width: 10%;
   height: 30px;
+  box-shadow: 4px 4px 0px 0px black;
 }

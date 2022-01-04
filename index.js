@@ -1,17 +1,32 @@
-const myStorage = window.localStorage;
+class Books {
+  constructor(title, author) {
+    this.title = title;
+    this.author = author;
+  }
 
-let books = (myStorage.getItem('books') !== null) ? JSON.parse(myStorage.getItem('books')) : [];
+  static db = () => ((window.localStorage.getItem('books') !== null) ? JSON.parse(window.localStorage.getItem('books')) : [])
 
-books.forEach((data) => {
-  document.querySelector('#listbooks').innerHTML += `
-            <li>
-                <p>${data.title}</p>
-                <p>${data.author}</p>
-                <button class='removeBook' data-book-name="${data.title}" >remove</button>
-                <hr>
-            </li>
-        `;
-});
+  static removeBook = (button) => {
+    const result = this.db().filter((word) => word.title !== button.getAttribute('data-book-name'));
+    button.parentElement.remove();
+    window.localStorage.setItem('books', JSON.stringify(result));
+  }
+
+  static load = () => {
+    this.db().forEach((data) => {
+      document.querySelector('#listbooks').innerHTML += `
+                <li>
+                    <p><q>${data.title}</q> by ${data.author}</p>
+                    <button class='removeBook' data-book-name="${data.title}" >remove</button>
+                </li>
+            `;
+    });
+  }
+}
+
+(() => {
+  Books.load();
+})();
 
 const addBook = (bookTitle, bookAuthor) => {
   const book = {
@@ -24,22 +39,14 @@ const addBook = (bookTitle, bookAuthor) => {
     books.push(book);
     document.querySelector('#listbooks').innerHTML += `
             <li>
-                <p>${bookTitle.value}</p>
-                <p>${bookAuthor.value}</p>
+                <p><q>${bookTitle.value}</q> by ${bookAuthor.value}</p>
                 <button type="button" data-book-name="${book.title}" onclick='removeBook(this)' >remove</button>
-                <hr>
             </li>
         `;
     myStorage.setItem('books', JSON.stringify(books));
   }
 };
 
-const removeBook = (button) => {
-  const result = books.filter((word) => word.title !== button.getAttribute('data-book-name'));
-  books = result;
-  button.parentElement.remove();
-  myStorage.setItem('books', JSON.stringify(books));
-};
 
 document.querySelector('#addbookform').addEventListener('submit', (e) => {
   e.preventDefault();
@@ -51,5 +58,5 @@ document.querySelector('#addbookform').addEventListener('submit', (e) => {
 });
 
 document.querySelectorAll('.removeBook').forEach((deleteBook) => {
-  deleteBook.addEventListener('click', () => removeBook(deleteBook));
+  deleteBook.addEventListener('click', () => Books.removeBook(deleteBook));
 });
