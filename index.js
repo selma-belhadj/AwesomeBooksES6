@@ -33,7 +33,7 @@ class Books {
        document.querySelector('#listbooks').innerHTML += `
         <li>
             <p><q>${book.title}</q> by ${book.author}</p>
-            <button type="button" data-book-name="${book.title}" onclick='removeBook(this)' >remove</button>
+            <button type="button" data-book-name="${book.title}" onclick='Books.removeBook(this)' >remove</button>
         </li>
         `;
        this.showAlert('Book added ', 'success');
