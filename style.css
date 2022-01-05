@@ -1,4 +1,87 @@
-ul {
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80%;
+  margin: auto auto 20px auto;
+  border: 3px solid black;
+}
+
+header li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 8px;
+}
+
+header div:nth-child(2) ul li {
+  padding: 0 12px 0 0;
+}
+
+#listbooks li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 8px;
+}
+
+li p {
+  margin: 0;
+}
+
+footer p {
+  padding: 1px 20px;
+}
+
+header div:nth-child(1) {
+  width: 40%;
+}
+
+header div:nth-child(1) p {
+  margin: 8px 20px;
+}
+
+header div:nth-child(1) p a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+header div:nth-child(2) {
+  width: 60%;
+}
+
+header div:nth-child(2) nav {
+  margin: 10px 15px;
+}
+
+header div:nth-child(2) ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+header div:nth-child(2) ul li a {
+  border-right: 2px solid black;
+  text-decoration: none;
+  color: black;
+  padding: 2px 8px;
+}
+
+header div:nth-child(2) ul li:last-child a {
+  border: none;
+}
+
+.todaydate {
+  width: 80%;
+  margin: auto auto 20px auto;
+  text-align: right;
+}
+
+#listbooks {
   list-style-type: none;
   padding: 0;
   border: 2px solid black;
@@ -8,36 +91,23 @@ ul {
 
 h1 {
   width: 80%;
-  margin: 30px auto;
+  margin: 10px auto;
   text-align: center;
 }
 
 h2 {
   width: 80%;
-  margin: 5px auto;
+  margin: 35px auto;
   text-align: center;
 }
 
-li {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 8px;
+#contact-tab ul li {
+  list-style-type: inherit;
+  line-height: 30px;
 }
 
-li:nth-child(odd) {
+#listbooks > li:nth-child(odd) {
   background-color: #eae8e8;
-}
-
-li p {
-  margin: 0;
-}
-
-.separator {
-  width: 30%;
-  margin: 20px auto;
-  height: 5px;
-  background-color: black;
 }
 
 form {
@@ -81,4 +151,41 @@ button {
 
 .success {
   background-color: #1b8003;
+}
+
+footer {
+  width: 80%;
+  left: 10%;
+  border: 3px solid black;
+  position: fixed;
+  bottom: 4%;
+  margin-top: 20px;
+}
+
+.tab {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+.activelink {
+  color: #1b64d1 !important;
+  border-color: #1b64d1 !important;
+}
+
+#contact-tab {
+  width: 80%;
+  margin: 20px auto;
+}
+
+#contact-tab p,
+#contact-tab ul {
+  width: 80%;
+  margin: 20px auto;
+}
+
+#contact-tab p {
+  margin-top: 50px;
 }
