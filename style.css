@@ -7,7 +7,17 @@ header {
   border: 3px solid black;
 }
 
-header li,
+header li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 8px;
+}
+
+header div:nth-child(2) ul li {
+  padding: 0 12px 0 0;
+}
+
 #listbooks li {
   display: flex;
   flex-direction: row;
@@ -17,6 +27,10 @@ header li,
 
 li p {
   margin: 0;
+}
+
+footer p {
+  padding: 1px 20px;
 }
 
 header div:nth-child(1) {
@@ -50,19 +64,15 @@ header div:nth-child(2) ul {
   justify-content: flex-end;
 }
 
-header div:nth-child(2) ul li {
-  padding: 0 12px 0 0;
-}
-
-header div:nth-child(2) ul li:last-child a {
-  border: none;
-}
-
 header div:nth-child(2) ul li a {
   border-right: 2px solid black;
   text-decoration: none;
   color: black;
   padding: 2px 8px;
+}
+
+header div:nth-child(2) ul li:last-child a {
+  border: none;
 }
 
 .todaydate {
@@ -89,6 +99,11 @@ h2 {
   width: 80%;
   margin: 35px auto;
   text-align: center;
+}
+
+#contact-tab ul li {
+  list-style-type: inherit;
+  line-height: 30px;
 }
 
 #listbooks > li:nth-child(odd) {
@@ -147,10 +162,6 @@ footer {
   margin-top: 20px;
 }
 
-footer p {
-  padding: 1px 20px;
-}
-
 .tab {
   display: none;
 }
@@ -177,9 +188,4 @@ footer p {
 
 #contact-tab p {
   margin-top: 50px;
-}
-
-#contact-tab ul li{
-  list-style-type: inherit;
-  line-height: 30px;
 }
