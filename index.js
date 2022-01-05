@@ -1,3 +1,11 @@
+const findHight = () => {
+  if (window.innerHeight < document.body.scrollHeight) {
+    document.querySelector('footer').style.position = 'relative';
+  } else {
+    document.querySelector('footer').style.position = 'fixed';
+  }
+};
+
 class Books {
   constructor(title, author) {
     this.title = title;
@@ -11,6 +19,7 @@ class Books {
     button.parentElement.remove();
     window.localStorage.setItem('books', JSON.stringify(result));
     this.showAlert('Book deleted ', 'success');
+    findHight();
   }
 
   static load = () => {
@@ -37,6 +46,7 @@ class Books {
         </li>
         `;
        this.showAlert('Book added ', 'success');
+       findHight();
      } else {
        this.showAlert('Book already exists ', 'danger');
      }
@@ -90,6 +100,7 @@ const formatDate = () => {
   setInterval(() => {
     document.querySelector('#currenttime').innerHTML = `${formatDate()}`;
   }, 1000);
+  findHight();
 })();
 
 document.querySelector('#addbookform').addEventListener('submit', (e) => {
@@ -117,5 +128,6 @@ document.querySelectorAll('.nav').forEach((nav) => {
     document.querySelectorAll('.tab').forEach((tab) => tab.classList.remove('active'));
     e.target.classList.add('activelink');
     document.querySelector(e.target.getAttribute('href')).classList.add('active');
+    findHight();
   });
 });

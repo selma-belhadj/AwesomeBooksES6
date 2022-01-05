@@ -7,7 +7,8 @@ header {
   border: 3px solid black;
 }
 
-li {
+header li,
+#listbooks li {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -23,7 +24,7 @@ header div:nth-child(1) {
 }
 
 header div:nth-child(1) p {
-  margin: 17px 20px;
+  margin: 8px 20px;
 }
 
 header div:nth-child(1) p a {
@@ -49,10 +50,19 @@ header div:nth-child(2) ul {
   justify-content: flex-end;
 }
 
+header div:nth-child(2) ul li {
+  padding: 0 12px 0 0;
+}
+
+header div:nth-child(2) ul li:last-child a {
+  border: none;
+}
+
 header div:nth-child(2) ul li a {
   border-right: 2px solid black;
   text-decoration: none;
   color: black;
+  padding: 2px 8px;
 }
 
 .todaydate {
@@ -77,19 +87,12 @@ h1 {
 
 h2 {
   width: 80%;
-  margin: 5px auto;
+  margin: 35px auto;
   text-align: center;
 }
 
 #listbooks > li:nth-child(odd) {
   background-color: #eae8e8;
-}
-
-.separator {
-  width: 30%;
-  margin: 20px auto;
-  height: 5px;
-  background-color: black;
 }
 
 form {
@@ -137,9 +140,15 @@ button {
 
 footer {
   width: 80%;
-  margin: 20px auto;
+  left: 10%;
   border: 3px solid black;
-  padding: 5px 20px;
+  position: fixed;
+  bottom: 4%;
+  margin-top: 20px;
+}
+
+footer p {
+  padding: 1px 20px;
 }
 
 .tab {
@@ -158,4 +167,19 @@ footer {
 #contact-tab {
   width: 80%;
   margin: 20px auto;
+}
+
+#contact-tab p,
+#contact-tab ul {
+  width: 80%;
+  margin: 20px auto;
+}
+
+#contact-tab p {
+  margin-top: 50px;
+}
+
+#contact-tab ul li{
+  list-style-type: inherit;
+  line-height: 30px;
 }
