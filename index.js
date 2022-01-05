@@ -47,6 +47,9 @@ class Books {
         `;
        this.showAlert('Book added ', 'success');
        findHight();
+       setTimeout(() => {
+         document.querySelector('[href="#list-tab"]').click();
+       }, 1000);
      } else {
        this.showAlert('Book already exists ', 'danger');
      }
