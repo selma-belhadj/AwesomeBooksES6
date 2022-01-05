@@ -53,8 +53,43 @@ class Books {
    }
 }
 
+const returnSufixDate = (digit) => {
+  const toArray = digit.toString().split('');
+  const toCheck = parseInt(toArray[toArray.length - 1], 10);
+  switch (true) {
+    case toCheck === 1:
+      return 'st';
+    case toCheck === 2:
+      return 'nd';
+    case toCheck === 3:
+      return 'rd';
+    default:
+      return 'th';
+  }
+};
+
+const formatDate = () => {
+  const CurrentTime = new Date();
+  const currentHour = CurrentTime.getHours();
+  let newHour;
+  const suffix = (currentHour >= 12 && currentHour !== 0) ? 'pm' : 'am';
+  if (currentHour > 12) {
+    newHour = currentHour - 12;
+  } else if (currentHour === 0) {
+    newHour = 12;
+  } else {
+    newHour = currentHour;
+  }
+  return `${newHour}:${CurrentTime.getMinutes()}:${CurrentTime.getSeconds()} ${suffix}`;
+};
+
 (() => {
   Books.load();
+  const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  document.querySelector('#todaydate').innerHTML = `${monthNames[new Date().getMonth()]} ${new Date().getDate()}<sup>${returnSufixDate(new Date().getDate())}</sup> ${new Date().getFullYear()}`;
+  setInterval(() => {
+    document.querySelector('#currenttime').innerHTML = `${formatDate()}`;
+  }, 1000);
 })();
 
 document.querySelector('#addbookform').addEventListener('submit', (e) => {

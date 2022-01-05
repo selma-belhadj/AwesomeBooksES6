@@ -1,21 +1,10 @@
-ul {
-  list-style-type: none;
-  padding: 0;
-  border: 2px solid black;
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   width: 80%;
-  margin: auto;
-}
-
-h1 {
-  width: 80%;
-  margin: 30px auto;
-  text-align: center;
-}
-
-h2 {
-  width: 80%;
-  margin: 5px auto;
-  text-align: center;
+  margin: auto auto 20px auto;
+  border: 3px solid black;
 }
 
 li {
@@ -25,12 +14,82 @@ li {
   padding: 8px;
 }
 
-li:nth-child(odd) {
-  background-color: #eae8e8;
-}
-
 li p {
   margin: 0;
+}
+
+header div:nth-child(1) {
+  width: 40%;
+}
+
+header div:nth-child(1) p {
+  margin: 17px 20px;
+}
+
+header div:nth-child(1) p a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+header div:nth-child(2) {
+  width: 60%;
+}
+
+header div:nth-child(2) nav {
+  margin: 10px 15px;
+}
+
+header div:nth-child(2) ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+header div:nth-child(2) ul li {
+  border-right: 2px solid black;
+}
+
+header div:nth-child(2) ul li:last-child {
+  border-right: none;
+}
+
+header div:nth-child(2) ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+.todaydate {
+  width: 80%;
+  margin: auto auto 20px auto;
+  text-align: right;
+}
+
+#listbooks {
+  list-style-type: none;
+  padding: 0;
+  border: 2px solid black;
+  width: 80%;
+  margin: auto;
+}
+
+h1 {
+  width: 80%;
+  margin: 10px auto;
+  text-align: center;
+}
+
+h2 {
+  width: 80%;
+  margin: 5px auto;
+  text-align: center;
+}
+
+#listbooks > li:nth-child(odd) {
+  background-color: #eae8e8;
 }
 
 .separator {
@@ -81,4 +140,11 @@ button {
 
 .success {
   background-color: #1b8003;
+}
+
+footer {
+  width: 80%;
+  margin: 20px auto;
+  border: 3px solid black;
+  padding: 5px 20px;
 }
