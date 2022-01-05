@@ -109,3 +109,13 @@ document.querySelector('#addbookform').addEventListener('submit', (e) => {
 document.querySelectorAll('.removeBook').forEach((deleteBook) => {
   deleteBook.addEventListener('click', () => Books.removeBook(deleteBook));
 });
+
+document.querySelectorAll('.nav').forEach((nav) => {
+  nav.addEventListener('click', (e) => {
+    document.querySelectorAll('.nav').forEach((nav2) => nav2.classList.remove('activelink'));
+    e.preventDefault();
+    document.querySelectorAll('.tab').forEach((tab) => tab.classList.remove('active'));
+    e.target.classList.add('activelink');
+    document.querySelector(e.target.getAttribute('href')).classList.add('active');
+  });
+});

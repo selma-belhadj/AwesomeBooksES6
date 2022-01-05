@@ -49,15 +49,8 @@ header div:nth-child(2) ul {
   justify-content: flex-end;
 }
 
-header div:nth-child(2) ul li {
-  border-right: 2px solid black;
-}
-
-header div:nth-child(2) ul li:last-child {
-  border-right: none;
-}
-
 header div:nth-child(2) ul li a {
+  border-right: 2px solid black;
   text-decoration: none;
   color: black;
 }
@@ -147,4 +140,22 @@ footer {
   margin: 20px auto;
   border: 3px solid black;
   padding: 5px 20px;
+}
+
+.tab {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+.activelink {
+  color: #1b64d1 !important;
+  border-color: #1b64d1 !important;
+}
+
+#contact-tab {
+  width: 80%;
+  margin: 20px auto;
 }

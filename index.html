@@ -17,24 +17,37 @@
     <div>
       <nav>
         <ul>
-          <li><a href="">List</a></li>
-          <li><a href="">Add new</a></li>
-          <li><a href="">Contact</a></li>
+          <li><a class="activelink nav" href="#list-tab">List</a></li>
+          <li><a href="#form-tab" class="nav">Add new</a></li>
+          <li><a href="#contact-tab" class="nav">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
   <p class="todaydate"><span id="todaydate"></span>, <span id="currenttime"></span></p>
+  <div class="tab active" id="list-tab">
   <h1>All Awesome Books</h1>
   <ul id="listbooks"></ul>
-  <hr class="separator">
+  </div>
+  <div class="tab" id="form-tab">
   <form action="#" id="addbookform">
     <h2 id="formtitle">Add new Book</h2>
     <input type="text" id="title" placeholder="Title">
     <input type="text" id="author" placeholder="Author">
     <button class="addNew" type="submit">Add</button>
   </form>
-  <footer>
+</div>
+<div class="tab" id="contact-tab">
+  <h2>Contact Information</h2>
+  <p>Do have any questions or you just ant to say "Hello"? <br> You can reach out to us !</p>
+  <ul>
+    <li>Our email: <a href="mailto:mail@mail.com">mail@mail.com</a></li>
+    <li>Our phone number: <a href="tel:0048456456456">0048456456456</a></li>
+    <li>Our address: street name, city, country</li>
+  </ul>
+</div>
+  
+  <footer >
     <p>Copyright ...</p>
   </footer>
   <script src="./index.js"></script>
